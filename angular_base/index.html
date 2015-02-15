@@ -1,0 +1,70 @@
+<html lang="en"><head>
+
+
+
+    <title>AngularJS Routing example</title>
+
+
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <style>body{padding-top:10px;background-color:#f5f5f5}.nav>li{float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top}</style>
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+
+      <script src="../../assets/js/html5shiv.js"></script>
+
+      <script src="../../assets/js/respond.min.js"></script>
+
+    <![endif]-->
+
+  <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+
+
+
+<body ng-app="inklingApp">
+  <div ng-view></div>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-cookies.min.js"></script>
+
+<script type="text/javascript">
+
+  var inklingApp = angular.module('inklingApp', ['ngRoute']);
+
+  inklingApp.controller('previewController', function($scope) {
+
+    $scope.id = "hi eleanor";
+      // $scope.message = 'This is Show orders screen';
+   
+  });
+    
+  inklingApp .config(['$routeProvider',
+    function($routeProvider) {
+      $routeProvider.
+        when('/preview/:inklingId/:page', {
+          templateUrl: 'preview.html',
+          controller: 'previewController'
+        });
+    }]);
+</script>
+
+
+  
+
+
+
+
+</body></html>
+
